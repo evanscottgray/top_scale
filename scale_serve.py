@@ -12,5 +12,10 @@ def get_reading():
     r = scale.reading()
     return jsonify({'reading': r}), 200
 
+@app.route("/readings")
+def get_readings():
+    r = scale._readings
+    return jsonify({'readings': r}), 200
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)

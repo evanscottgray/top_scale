@@ -1,5 +1,7 @@
 import serial
 
+# NOTE this is meant to get readings from the ULTRASHIP U-2 USB scale over
+#      serial.
 class Scale(object):
 
     def __init__(self, device):
@@ -38,7 +40,6 @@ class Scale(object):
 
         if len(data) > 14:
             parseable_data = data[-14::]
-
 
         if parseable_data is not None:
             pd = parseable_data[3:11].strip()
